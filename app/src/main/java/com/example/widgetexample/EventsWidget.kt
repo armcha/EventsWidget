@@ -79,6 +79,7 @@ class EventsWidget : GlanceAppWidget() {
                 .background(ImageProvider(R.drawable.widget_background))
         ) {
 
+            //Test
             Column(
                 modifier = GlanceModifier
                     .wrapContentWidth()
