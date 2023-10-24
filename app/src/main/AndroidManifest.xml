@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <receiver
-            android:name=".EventsWidgetReceiver"
+            android:name=".widget.EventsWidgetReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="true">
             <intent-filter>
