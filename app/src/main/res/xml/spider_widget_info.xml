@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/spider_man"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:minWidth="200dp"
+    android:minHeight="80dp"
+    android:previewImage="@drawable/medium_up_next_widget"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="2000"
+    android:widgetCategory="home_screen" />

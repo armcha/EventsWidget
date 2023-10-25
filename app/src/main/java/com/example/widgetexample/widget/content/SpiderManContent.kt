@@ -9,12 +9,16 @@ import androidx.glance.ImageProvider
 import androidx.glance.LocalContext
 import androidx.glance.appwidget.appWidgetBackground
 import androidx.glance.background
+import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.Column
-import androidx.glance.layout.Row
+import androidx.glance.layout.ContentScale
 import androidx.glance.layout.fillMaxHeight
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.height
 import androidx.glance.layout.padding
+import androidx.glance.layout.width
+import androidx.glance.layout.wrapContentSize
 import androidx.glance.layout.wrapContentWidth
 import com.example.widgetexample.R
 import com.example.widgetexample.widget.textAsBitmap
@@ -22,43 +26,60 @@ import com.example.widgetexample.widget.textAsBitmap
 @Composable
 fun SpiderManContent() {
     val context = LocalContext.current
+
     Box(
         modifier = GlanceModifier
             .fillMaxSize()
             .appWidgetBackground()
-            .padding(vertical = 15.dp)
     ) {
-        Row(
+        Column(
             modifier = GlanceModifier
                 .fillMaxSize()
-                .padding(20.dp)
-                .background(ImageProvider(R.drawable.widget_background))
+                .background(ImageProvider(R.drawable.widget_background_web)),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalAlignment = Alignment.CenterVertically,
         ) {
+
+            Image(
+                modifier = GlanceModifier
+                    .width(100.dp)
+                    .height(100.dp)
+                    .padding(top = 25.dp),
+                contentDescription = "",
+                provider = ImageProvider(R.drawable.spider_logo),
+                contentScale = ContentScale.Crop
+            )
 
             Column(
                 modifier = GlanceModifier
                     .wrapContentWidth()
-                    .padding(start = 5.dp, top = 40.dp, end = 18.dp)
                     .fillMaxHeight()
+                    .padding(top = 20.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalAlignment = Alignment.CenterVertically,
             ) {
                 Image(
-                    modifier = GlanceModifier.padding(bottom = 3.dp),
+                    modifier = GlanceModifier
+                        .padding(bottom = 3.dp)
+                        .wrapContentSize(),
                     provider = ImageProvider(
                         context.textAsBitmap(
                             "SPIDER-MAN",
-                            15f,
-                            color = Color.Black,
-                            font = R.font.spider_2
+                            22f,
+                            color = Color.Red,
+                            font = R.font.good_times_rg
                         )
                     ),
                     contentDescription = ""
                 )
                 Image(
-                    modifier = GlanceModifier.padding(bottom = 3.dp),
+                    modifier = GlanceModifier
+                        .padding(bottom = 3.dp)
+                        .wrapContentSize(),
                     provider = ImageProvider(
                         context.textAsBitmap(
                             "Far From Home",
-                            20f,
+                            25f,
                             color = Color.Black,
                             font = R.font.spider
                         )

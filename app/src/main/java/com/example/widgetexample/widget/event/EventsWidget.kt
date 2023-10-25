@@ -1,4 +1,4 @@
-package com.example.widgetexample.widget
+package com.example.widgetexample.widget.event
 
 import android.content.Context
 import androidx.compose.runtime.LaunchedEffect
@@ -10,6 +10,7 @@ import androidx.glance.state.GlanceStateDefinition
 import androidx.glance.state.PreferencesGlanceStateDefinition
 import com.example.widgetexample.data.WidgetDataHolder
 import com.example.widgetexample.widget.content.EventsContent
+import com.example.widgetexample.widget.content.SpiderManContent
 
 class EventsWidget : GlanceAppWidget() {
 
@@ -21,10 +22,8 @@ class EventsWidget : GlanceAppWidget() {
         provideContent {
             LaunchedEffect(Unit) {
                 widgetDataHolder.fetchPlannings()
-                EventsWidget().updateAll(context)
             }
             EventsContent(widgetDataHolder.plannings)
-//            SpiderManContent()
         }
     }
 }
