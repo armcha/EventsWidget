@@ -3,6 +3,7 @@ package com.example.widgetexample.widget.content
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceModifier
 import androidx.glance.Image
 import androidx.glance.ImageProvider
@@ -21,7 +22,7 @@ import androidx.glance.layout.width
 import androidx.glance.layout.wrapContentSize
 import androidx.glance.layout.wrapContentWidth
 import com.example.widgetexample.R
-import com.example.widgetexample.widget.textAsBitmap
+import com.example.widgetexample.widget.GlanceText
 
 @Composable
 fun SpiderManContent() {
@@ -58,33 +59,23 @@ fun SpiderManContent() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Image(
+                GlanceText(
                     modifier = GlanceModifier
                         .padding(bottom = 3.dp)
                         .wrapContentSize(),
-                    provider = ImageProvider(
-                        context.textAsBitmap(
-                            "SPIDER-MAN",
-                            22f,
-                            color = Color.Red,
-                            font = R.font.good_times_rg
-                        )
-                    ),
-                    contentDescription = ""
+                    text = "SPIDER-MAN",
+                    color = Color.Red,
+                    font = R.font.good_times_rg,
+                    fontSize = 22.sp
                 )
-                Image(
+                GlanceText(
                     modifier = GlanceModifier
                         .padding(bottom = 3.dp)
                         .wrapContentSize(),
-                    provider = ImageProvider(
-                        context.textAsBitmap(
-                            "Far From Home",
-                            25f,
-                            color = Color.Black,
-                            font = R.font.spider
-                        )
-                    ),
-                    contentDescription = ""
+                    text = "Far From Home",
+                    color = Color.Black,
+                    font = R.font.spider,
+                    fontSize = 25.sp
                 )
             }
         }
